@@ -33,6 +33,10 @@ impl<'e> Value<'e> {
         Self { raw, env }
     }
 
+    pub fn raw(&self) -> emacs_value {
+        self.raw
+    }
+
     /// Protects this value by registering with its [`Env`], effectively "rooting" the underlying
     /// Lisp object during the lifetime of the [`Env`].
     ///
